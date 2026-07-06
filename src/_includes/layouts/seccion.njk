@@ -1,0 +1,20 @@
+---
+layout: layouts/base.njk
+---
+<article class="pagina">
+  <header class="pagina-header">
+    <h1>{{ title }}</h1>
+  </header>
+  {{ content | safe }}
+  {% set hijos = collections.all | eleventyNavigation(eleventyNavigation.key) %}
+  <ul class="tarjetas">
+    {%- for hijo in hijos %}
+    <li class="tarjeta">
+      <a href="{{ hijo.url }}">
+        <h2>{{ hijo.title }}</h2>
+        {% if hijo.description %}<p>{{ hijo.description }}</p>{% endif %}
+      </a>
+    </li>
+    {%- endfor %}
+  </ul>
+</article>

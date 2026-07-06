@@ -1,0 +1,24 @@
+---
+layout: layouts/base.njk
+---
+<article class="pagina">
+  <header class="pagina-header">
+    <h1>{{ title }}</h1>
+  </header>
+  {{ content | safe }}
+  <ul class="recursos">
+    {%- for item in collections[coleccion] | sort(attribute="data.title") %}
+    <li class="recurso">
+      <h2>
+        {%- if item.data.enlace -%}
+        <a href="{{ item.data.enlace }}" rel="noopener">{{ item.data.title }} ↗</a>
+        {%- else -%}
+        {{ item.data.title }}
+        {%- endif -%}
+      </h2>
+      {% if item.data.autor %}<p class="recurso-autor">{{ item.data.autor }}</p>{% endif %}
+      <div class="recurso-nota">{{ item.templateContent | safe }}</div>
+    </li>
+    {%- endfor %}
+  </ul>
+</article>

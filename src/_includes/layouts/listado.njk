@@ -1,0 +1,20 @@
+---
+layout: layouts/base.njk
+---
+<article class="pagina">
+  <header class="pagina-header">
+    <h1>{{ title }}</h1>
+  </header>
+  {{ content | safe }}
+  {%- set items = collections[coleccion] %}
+  {%- if orden != "asc" %}{% set items = items | reverse %}{% endif %}
+  <ul class="listado">
+    {%- for item in items %}
+    <li class="listado-item">
+      <h2><a href="{{ item.url }}">{{ item.data.title }}</a></h2>
+      <time datetime="{{ item.date.toISOString() }}">{{ item.date | fechaLarga }}</time>
+      {% if item.data.description %}<p>{{ item.data.description }}</p>{% endif %}
+    </li>
+    {%- endfor %}
+  </ul>
+</article>

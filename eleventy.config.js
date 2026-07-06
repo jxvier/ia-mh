@@ -1,0 +1,31 @@
+import eleventyNavigationPlugin from "@11ty/eleventy-navigation";
+
+export default function (eleventyConfig) {
+  eleventyConfig.addPlugin(eleventyNavigationPlugin);
+
+  eleventyConfig.addPassthroughCopy("src/css");
+  eleventyConfig.addPassthroughCopy("src/img");
+
+  // Uso en cualquier .md:  {% youtube "VIDEO_ID", "Título del video" %}
+  eleventyConfig.addShortcode("youtube", (id, title = "Video de YouTube") => {
+    return `<div class="video-embed"><iframe src="https://www.youtube-nocookie.com/embed/${id}" title="${title}" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>`;
+  });
+
+  eleventyConfig.addFilter("fechaLarga", (dateObj) => {
+    return new Intl.DateTimeFormat("es-SV", {
+      dateStyle: "long",
+      timeZone: "UTC",
+    }).format(dateObj);
+  });
+
+  return {
+    dir: {
+      input: "src",
+      includes: "_includes",
+      data: "_data",
+      output: "_site",
+    },
+    markdownTemplateEngine: "njk",
+    htmlTemplateEngine: "njk",
+  };
+}
