@@ -1,0 +1,19 @@
+---
+layout: layouts/base.njk
+---
+<article class="pagina">
+  <header class="pagina-header">
+    <h1>{{ title }}</h1>
+  </header>
+  {{ content | safe }}
+  <ul class="equipo">
+    {%- for persona in collections[coleccion] | sort(attribute="data.orden") %}
+    <li class="persona">
+      {% if persona.data.foto %}<img src="{{ persona.data.foto }}" alt="{{ persona.data.title }}">{% endif %}
+      <h2>{{ persona.data.title }}</h2>
+      {% if persona.data.rol %}<p class="persona-rol">{{ persona.data.rol }}</p>{% endif %}
+      <div class="persona-bio">{{ persona.templateContent | safe }}</div>
+    </li>
+    {%- endfor %}
+  </ul>
+</article>

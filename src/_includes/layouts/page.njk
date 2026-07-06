@@ -1,0 +1,10 @@
+---
+layout: layouts/base.njk
+---
+<article class="pagina">
+  <header class="pagina-header">
+    <h1>{{ title }}</h1>
+    {% if date %}<time datetime="{{ page.date.toISOString() }}">{{ page.date | fechaLarga }}</time>{% endif %}
+  </header>
+  {{ content | safe }}
+</article>

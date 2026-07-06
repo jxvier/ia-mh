@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if title and page.url != "/" %}{{ title }} · {% endif %}{{ site.titulo }}</title>
+  <meta name="description" content="{{ description or site.descripcion }}">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/">{{ site.titulo }}</a>
+    <nav class="site-nav">
+      <ul>
+        {%- for entry in collections.all | eleventyNavigation %}
+        {%- set activo = (entry.url == page.url) or (entry.url != "/" and page.url.startsWith(entry.url)) %}
+        <li{% if activo %} class="activo"{% endif %}><a href="{{ entry.url }}">{{ entry.title }}</a></li>
+        {%- endfor %}
+      </ul>
+    </nav>
+  </header>
+  <main>
+    {{ content | safe }}
+  </main>
+  <footer class="site-footer">
+    <p>{{ site.titulo }} — <a href="{{ site.url }}">ia.monicaherrera.edu.sv</a></p>
+  </footer>
+</body>
+</html>
