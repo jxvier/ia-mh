@@ -1,0 +1,72 @@
+---
+layout: layouts/base.njk
+---
+<section class="inicio-hero">
+  <div class="inicio-hero__wedge" aria-hidden="true"></div>
+  <div class="inicio-hero__grid">
+    <div>
+      <span class="mh-eyebrow mh-eyebrow--outline">SECCIÓN DE IA</span>
+      <h1 class="inicio-hero__title">Inteligencia<br>Artificial</h1>
+      <p class="inicio-hero__lede">{{ description }}</p>
+      <div class="inicio-hero__actions">
+        <a href="/manifiesto/" class="mh-btn mh-btn--solid">Leé el manifiesto</a>
+        <a href="/cuadernos/" class="mh-btn mh-btn--outline-light">Ver cuadernos</a>
+      </div>
+    </div>
+    <div class="inicio-hero__photo">
+      <span class="blob blob--orange" aria-hidden="true"></span>
+      <span class="blob blob--yellow" aria-hidden="true"></span>
+      <span class="blob blob--green" aria-hidden="true"></span>
+      <div class="inicio-hero__photo-frame">
+        <span>[ FOTO 4:5 ]</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="inicio-explora">
+  <div class="inicio-explora__inner">
+    <h2>Explorá la sección</h2>
+    <ul class="explora-grid">
+      {%- for c in explora %}
+      <li class="explora-card" style="--card-color: {{ c.color }};">
+        <a href="{{ c.href }}">
+          <span class="explora-card__cat">{{ c.cat }}</span>
+          <span>
+            <span class="explora-card__label">{{ c.label }}</span>
+            <span class="explora-card__desc">{{ c.desc }}</span>
+          </span>
+          <span class="explora-card__arrow"><i class="fa-solid fa-arrow-right"></i></span>
+        </a>
+      </li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="inicio-cuadernos">
+  <div class="inicio-cuadernos__inner">
+    <div class="inicio-cuadernos__head">
+      <h2>Cuadernos recientes</h2>
+      <a href="/cuadernos/">Ver todos <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+    <ul class="inicio-cuadernos__list">
+      {%- set recientes = collections.cuaderno | reverse %}
+      {%- for item in recientes %}
+      {%- if loop.index <= 2 %}
+      <li>
+        <a href="{{ item.url }}">
+          <span class="inicio-cuadernos__n">{{ loop.index | zeroPad }}</span>
+          <span class="inicio-cuadernos__meta">
+            <span class="inicio-cuadernos__title">{{ item.data.title }}</span>
+            {% if item.data.description %}<span class="inicio-cuadernos__desc">{{ item.data.description }}</span>{% endif %}
+          </span>
+          <time datetime="{{ item.date.toISOString() }}">{{ item.date | fechaLarga }}</time>
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </li>
+      {%- endif %}
+      {%- endfor %}
+    </ul>
+  </div>
+</section>

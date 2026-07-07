@@ -18,6 +18,8 @@ export default function (eleventyConfig) {
     }).format(dateObj);
   });
 
+  eleventyConfig.addFilter("zeroPad", (n) => String(n).padStart(2, "0"));
+
   return {
     dir: {
       input: "src",

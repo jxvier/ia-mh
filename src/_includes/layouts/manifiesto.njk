@@ -1,0 +1,30 @@
+---
+layout: layouts/base.njk
+---
+<section class="manifiesto-hero">
+  <span class="blob blob--orange" aria-hidden="true"></span>
+  <span class="blob blob--yellow" aria-hidden="true"></span>
+  <span class="blob blob--green" aria-hidden="true"></span>
+  <div class="manifiesto-hero__inner">
+    <span class="mh-eyebrow">NUESTRA POSTURA FRENTE A LA IA</span>
+    <h1>{{ title }}</h1>
+    <div class="manifiesto-hero__lede">{{ content | safe }}</div>
+  </div>
+</section>
+
+<section class="principios">
+  <div class="principios__inner">
+    <ol>
+      {%- for p in principios %}
+      <li style="--principio-color: {{ p.color }};">
+        <span class="principios__n">{{ loop.index | zeroPad }}</span>
+        <div>
+          <h3>{{ p.t }}</h3>
+          <p>{{ p.d }}</p>
+        </div>
+      </li>
+      {%- endfor %}
+    </ol>
+    <a href="/" class="mh-btn mh-btn--solid-dark">Volver al inicio</a>
+  </div>
+</section>

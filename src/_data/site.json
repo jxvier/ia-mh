@@ -1,5 +1,21 @@
 {
   "titulo": "IA · Mónica Herrera",
   "descripcion": "Sección de Inteligencia Artificial de la Escuela de Comunicación Mónica Herrera",
-  "url": "https://ia.monicaherrera.edu.sv"
+  "url": "https://ia.monicaherrera.edu.sv",
+  "telefono": "+503 2507 6500",
+  "whatsapp": "https://wa.me/50325076500",
+  "utilidad": [
+    { "label": "Microsoft 365", "href": "#" },
+    { "label": "Mi Escuela", "href": "#" },
+    { "label": "Gestiones", "href": "#" },
+    { "label": "Moodle", "href": "#" },
+    { "label": "Biblioteca", "href": "#" }
+  ],
+  "redes": [
+    { "icono": "fa-brands fa-facebook", "href": "#" },
+    { "icono": "fa-brands fa-instagram", "href": "#" },
+    { "icono": "fa-brands fa-linkedin", "href": "#" },
+    { "icono": "fa-brands fa-youtube", "href": "#" },
+    { "icono": "fa-brands fa-x-twitter", "href": "#" }
+  ]
 }
