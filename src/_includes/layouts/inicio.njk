@@ -56,7 +56,6 @@ layout: layouts/base.njk
       {%- if loop.index <= 2 %}
       <li>
         <a href="{{ item.url }}">
-          <span class="inicio-cuadernos__n">{{ loop.index | zeroPad }}</span>
           <span class="inicio-cuadernos__meta">
             <span class="inicio-cuadernos__title">{{ item.data.title }}</span>
             {% if item.data.description %}<span class="inicio-cuadernos__desc">{{ item.data.description }}</span>{% endif %}

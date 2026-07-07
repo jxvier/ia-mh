@@ -21,7 +21,8 @@ layout: layouts/base.njk
       {%- for item in items %}
       <li>
         <a href="{{ item.url }}" style="--card-color: {{ palette[loop.index0 % 4] }};">
-          <span class="cuadernos-listado__n">{{ loop.index | zeroPad }}</span>
+          {%- set numero = item.fileSlug | numeroSlug %}
+          {%- if numero %}<span class="cuadernos-listado__n">{{ numero }}</span>{% endif %}
           <span class="cuadernos-listado__meta">
             <time datetime="{{ item.date.toISOString() }}">{{ item.date | fechaLarga }}</time>
             <span class="cuadernos-listado__title">{{ item.data.title }}</span>

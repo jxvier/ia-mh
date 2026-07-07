@@ -43,73 +43,6 @@ h1, h2, h3 {
   letter-spacing: -0.01em;
 }
 
-/* ======================= Utility bar ======================= */
-.mh-utility {
-  background: #fff;
-  border-bottom: 1px solid #ececec;
-}
-
-.mh-utility__inner {
-  max-width: var(--mh-ancho-max);
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem 1.5rem;
-  padding: 11px var(--mh-pad);
-  flex-wrap: wrap;
-}
-
-.mh-utility__links {
-  display: flex;
-  gap: 1.75rem;
-  flex-wrap: wrap;
-}
-
-.mh-utility__links a {
-  color: #1a1a1a;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 0.8125rem;
-}
-
-.mh-utility__links a:hover {
-  color: var(--mh-green);
-}
-
-.mh-utility__meta {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-  flex-wrap: wrap;
-}
-
-.mh-utility__phone {
-  font-weight: 700;
-  color: #1a1a1a;
-  font-size: 0.9375rem;
-}
-
-.mh-utility__social {
-  display: flex;
-  gap: 0.8rem;
-  font-size: 0.9375rem;
-}
-
-.mh-utility__social a {
-  color: #111;
-}
-
-.mh-utility__social a:hover {
-  color: var(--mh-green);
-}
-
-@media (max-width: 640px) {
-  .mh-utility__links {
-    display: none;
-  }
-}
-
 /* ======================= Nav band ======================= */
 .mh-nav {
   background: var(--mh-black);
@@ -136,24 +69,11 @@ h1, h2, h3 {
 }
 
 .mh-logo__mark {
-  position: relative;
-  width: 38px;
-  height: 38px;
-  display: inline-block;
+  width: 44px;
+  height: 44px;
+  display: block;
   flex-shrink: 0;
 }
-
-.mh-logo__mark span {
-  position: absolute;
-  width: 16px;
-  height: 16px;
-  background: var(--mh-green);
-}
-
-.mh-logo__mark span:nth-child(1) { left: 0; top: 0; }
-.mh-logo__mark span:nth-child(2) { right: 0; top: 0; transform: rotate(45deg); }
-.mh-logo__mark span:nth-child(3) { left: 0; bottom: 0; transform: rotate(45deg); }
-.mh-logo__mark span:nth-child(4) { right: 0; bottom: 0; }
 
 .mh-logo__text {
   display: flex;
@@ -225,16 +145,6 @@ h1, h2, h3 {
 
 .mh-nav__links a:hover {
   color: #fff;
-}
-
-.mh-nav__search {
-  background: none;
-  border: 0;
-  color: #fff;
-  font-size: 0.9375rem;
-  cursor: pointer;
-  padding: 0;
-  margin-left: 4px;
 }
 
 .mh-nav__divider {
@@ -559,14 +469,6 @@ h1, h2, h3 {
   flex-wrap: wrap;
 }
 
-.inicio-cuadernos__n {
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: 2.5rem;
-  color: var(--mh-yellow);
-  min-width: 64px;
-}
-
 .inicio-cuadernos__meta {
   flex: 1;
   min-width: 200px;
@@ -854,7 +756,7 @@ h1, h2, h3 {
 }
 
 /* ======================= Contenido genérico ======================= */
-main {
+.pagina {
   max-width: var(--ancho-max);
   margin: 0 auto;
   padding: 2.5rem 1.5rem 4rem;
@@ -1113,23 +1015,3 @@ main {
   font-size: 0.8125rem;
 }
 
-/* ======================= WhatsApp float ======================= */
-.mh-whatsapp {
-  position: fixed;
-  right: 24px;
-  bottom: 24px;
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  background: #25D366;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 8px 20px rgba(0,0,0,.25);
-  z-index: 50;
-}
-
-.mh-whatsapp i {
-  color: #fff;
-  font-size: 1.8125rem;
-}
