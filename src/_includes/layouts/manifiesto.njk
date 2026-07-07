@@ -1,6 +1,7 @@
 ---
 layout: layouts/base.njk
 ---
+{%- set partes = content | partir("<!-- principios -->") %}
 <section class="manifiesto-hero">
   <span class="blob blob--orange" aria-hidden="true"></span>
   <span class="blob blob--yellow" aria-hidden="true"></span>
@@ -8,8 +9,24 @@ layout: layouts/base.njk
   <div class="manifiesto-hero__inner">
     <span class="mh-eyebrow">NUESTRA POSTURA FRENTE A LA IA</span>
     <h1>{{ title }}</h1>
-    <div class="manifiesto-hero__lede">{{ content | safe }}</div>
+    {% if lede %}<p class="manifiesto-hero__lede">{{ lede }}</p>{% endif %}
   </div>
+</section>
+
+<section class="manifiesto-video">
+  <div class="manifiesto-video__inner">
+    {% if video %}
+    {% youtube video, "Manifiesto en video" %}
+    {% else %}
+    <div class="video-embed video-embed--placeholder">
+      <span>[ VIDEO · agregá el ID de YouTube en el campo "video" de manifiesto.md ]</span>
+    </div>
+    {% endif %}
+  </div>
+</section>
+
+<section class="manifiesto-cuerpo">
+  <div class="manifiesto-cuerpo__inner">{{ partes[0] | safe }}</div>
 </section>
 
 <section class="principios">
@@ -25,6 +42,14 @@ layout: layouts/base.njk
       </li>
       {%- endfor %}
     </ol>
-    <a href="/" class="mh-btn mh-btn--solid-dark">Volver al inicio</a>
   </div>
 </section>
+
+{%- if partes[1] and partes[1] | trim %}
+<section class="manifiesto-invitacion">
+  <div class="manifiesto-invitacion__inner">
+    {{ partes[1] | safe }}
+    <a href="/" class="mh-btn mh-btn--solid">Volver al inicio</a>
+  </div>
+</section>
+{%- endif %}

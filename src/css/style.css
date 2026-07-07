@@ -544,14 +544,60 @@ h1, h2, h3 {
 
 .manifiesto-hero__lede {
   max-width: 760px;
-}
-
-.manifiesto-hero__lede p {
   font-family: var(--font-texto);
   font-size: 1.3125rem;
   line-height: 1.5;
   color: #eae4ff;
   margin: 24px 0 0;
+}
+
+.manifiesto-video {
+  background: #fff;
+  padding: 64px var(--mh-pad) 0;
+}
+
+.manifiesto-video__inner {
+  max-width: 51.25rem;
+  margin: 0 auto;
+}
+
+.video-embed--placeholder {
+  background: repeating-linear-gradient(45deg, #2a2a2a 0 16px, #333 16px 32px);
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.video-embed--placeholder span {
+  font-family: monospace;
+  font-size: 0.8125rem;
+  color: #999;
+  letter-spacing: 1px;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.manifiesto-cuerpo {
+  background: #fff;
+  padding: 56px var(--mh-pad) 56px;
+}
+
+.manifiesto-cuerpo__inner {
+  max-width: 51.25rem;
+  margin: 0 auto;
+}
+
+.manifiesto-cuerpo__inner p {
+  font-family: var(--font-texto);
+  font-size: 1.125rem;
+  line-height: 1.65;
+  color: #333;
+  margin: 0 0 1.4em;
+}
+
+.manifiesto-cuerpo__inner p:last-child {
+  margin-bottom: 0;
 }
 
 .principios {
@@ -602,14 +648,43 @@ h1, h2, h3 {
   margin: 10px 0 0;
 }
 
-.principios .mh-btn {
-  align-self: flex-start;
-  margin-top: 40px;
-}
-
 @media (max-width: 560px) {
   .principios li { gap: 18px; }
   .principios__n { font-size: 2.5rem; min-width: 56px; }
+}
+
+.manifiesto-invitacion {
+  background: var(--mh-black);
+  padding: 80px var(--mh-pad) 88px;
+}
+
+.manifiesto-invitacion__inner {
+  max-width: 51.25rem;
+  margin: 0 auto;
+}
+
+.manifiesto-invitacion__inner h2 {
+  color: #fff;
+  font-size: clamp(1.875rem, 4vw, 2.75rem);
+  letter-spacing: -1px;
+  margin: 0 0 30px;
+}
+
+.manifiesto-invitacion__inner p {
+  font-family: var(--font-texto);
+  font-size: 1.125rem;
+  line-height: 1.65;
+  color: #d9d9d9;
+  margin: 0 0 1.3em;
+}
+
+.manifiesto-invitacion__inner strong {
+  font-family: var(--font-display);
+  color: var(--mh-yellow);
+}
+
+.manifiesto-invitacion .mh-btn {
+  margin-top: 24px;
 }
 
 /* ======================= Cuadernos ======================= */
