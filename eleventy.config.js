@@ -20,6 +20,12 @@ export default function (eleventyConfig) {
 
   eleventyConfig.addFilter("zeroPad", (n) => String(n).padStart(2, "0"));
 
+  // Extrae el número real del slug del archivo: "cuaderno-02" -> "02"
+  eleventyConfig.addFilter("numeroSlug", (slug) => {
+    const m = String(slug).match(/(\d+)$/);
+    return m ? m[1].padStart(2, "0") : "";
+  });
+
   return {
     dir: {
       input: "src",

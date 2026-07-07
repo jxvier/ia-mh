@@ -12,30 +12,20 @@
   <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-  <div class="mh-utility">
-    <div class="mh-utility__inner">
-      <div class="mh-utility__links">
-        {%- for u in site.utilidad %}
-        <a href="{{ u.href }}">{{ u.label }}</a>
-        {%- endfor %}
-      </div>
-      <div class="mh-utility__meta">
-        <span class="mh-utility__phone">{{ site.telefono }}</span>
-        <div class="mh-utility__social">
-          {%- for r in site.redes %}
-          <a href="{{ r.href }}" aria-label="{{ r.icono | replace('fa-brands fa-', '') }}"><i class="{{ r.icono }}"></i></a>
-          {%- endfor %}
-        </div>
-      </div>
-    </div>
-  </div>
-
   <header class="mh-nav">
     <div class="mh-nav__inner">
       <a class="mh-logo" href="/">
-        <span class="mh-logo__mark" aria-hidden="true">
-          <span></span><span></span><span></span><span></span>
-        </span>
+        <svg class="mh-logo__mark" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+          <g fill="var(--mh-green, #009845)">
+            <g id="mh-blade">
+              <polygon points="50,2 98,50 86.7,61.3 50,25"/>
+              <polygon points="44,8 44,26 26,26"/>
+            </g>
+            <use href="#mh-blade" transform="rotate(90 50 50)"/>
+            <use href="#mh-blade" transform="rotate(180 50 50)"/>
+            <use href="#mh-blade" transform="rotate(270 50 50)"/>
+          </g>
+        </svg>
         <span class="mh-logo__text">
           <span class="mh-logo__title">MÓNICA HERRERA</span>
           <span class="mh-logo__sub">/ SECCIÓN IA</span>
@@ -48,7 +38,6 @@
           <li{% if activo %} class="activo"{% endif %}><a href="{{ entry.url }}">{{ entry.title }}</a></li>
           {%- endfor %}
         </ul>
-        <button type="button" class="mh-nav__search" aria-label="Buscar"><i class="fa-solid fa-magnifying-glass"></i></button>
         <span class="mh-nav__divider" aria-hidden="true">|</span>
         <span class="mh-nav__lang">ENG</span>
       </nav>
@@ -97,8 +86,5 @@
     </div>
   </footer>
 
-  <a class="mh-whatsapp" href="{{ site.whatsapp }}" target="_blank" rel="noopener" aria-label="Escribinos por WhatsApp">
-    <i class="fa-brands fa-whatsapp"></i>
-  </a>
 </body>
 </html>
