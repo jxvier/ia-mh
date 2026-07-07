@@ -1,0 +1,36 @@
+---
+layout: layouts/base.njk
+---
+<section class="cuadernos-hero">
+  <span class="blob blob--purple" aria-hidden="true"></span>
+  <span class="blob blob--yellow" aria-hidden="true"></span>
+  <span class="blob blob--orange" aria-hidden="true"></span>
+  <div class="cuadernos-hero__inner">
+    <span class="mh-eyebrow">BITÁCORAS DE EXPLORACIÓN</span>
+    <h1>{{ title }}</h1>
+    {{ content | safe }}
+  </div>
+</section>
+
+<section class="cuadernos-listado">
+  <div class="cuadernos-listado__inner">
+    {%- set palette = ["#16A75C", "#5A2AE6", "#F1591F", "#FFC629"] %}
+    {%- set items = collections[coleccion] %}
+    {%- if orden != "asc" %}{% set items = items | reverse %}{% endif %}
+    <ul>
+      {%- for item in items %}
+      <li>
+        <a href="{{ item.url }}" style="--card-color: {{ palette[loop.index0 % 4] }};">
+          <span class="cuadernos-listado__n">{{ loop.index | zeroPad }}</span>
+          <span class="cuadernos-listado__meta">
+            <time datetime="{{ item.date.toISOString() }}">{{ item.date | fechaLarga }}</time>
+            <span class="cuadernos-listado__title">{{ item.data.title }}</span>
+            {% if item.data.description %}<span class="cuadernos-listado__desc">{{ item.data.description }}</span>{% endif %}
+          </span>
+          <span class="cuadernos-listado__cta">Leer <i class="fa-solid fa-arrow-right"></i></span>
+        </a>
+      </li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>

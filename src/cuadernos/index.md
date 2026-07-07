@@ -1,6 +1,6 @@
 ---
 title: Cuadernos
-layout: layouts/listado.njk
+layout: layouts/cuadernos.njk
 coleccion: cuaderno
 orden: asc
 "override:tags": []

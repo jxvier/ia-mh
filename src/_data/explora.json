@@ -1,0 +1,8 @@
+[
+  { "cat": "01", "label": "Manifiesto", "desc": "Nuestra postura frente a la IA.", "color": "#0B0B0B", "href": "/manifiesto/" },
+  { "cat": "02", "label": "Cuadernos", "desc": "Bitácoras de exploración y experimentos.", "color": "#F1591F", "href": "/cuadernos/" },
+  { "cat": "03", "label": "Biblioteca", "desc": "Papers, herramientas y recursos.", "color": "#16A75C", "href": "/biblioteca/" },
+  { "cat": "04", "label": "Antecedentes", "desc": "Artículos, casos y noticias.", "color": "#5A2AE6", "href": "/antecedentes/" },
+  { "cat": "05", "label": "Multimedia", "desc": "Videos y material audiovisual.", "color": "#FFC629", "href": "/multimedia/" },
+  { "cat": "06", "label": "Equipo", "desc": "Quiénes somos.", "color": "#0B0B0B", "href": "/equipo/" }
+]
