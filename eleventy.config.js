@@ -3,6 +3,18 @@ import eleventyNavigationPlugin from "@11ty/eleventy-navigation";
 export default function (eleventyConfig) {
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
 
+  // ===================================================================
+  // SECCIONES DESACTIVADAS PARA EL LANZAMIENTO
+  // Comentá (o borrá) la línea correspondiente para restaurar la
+  // sección completa: páginas, menú y colecciones.
+  // ===================================================================
+  eleventyConfig.ignores.add("src/biblioteca/**");
+  eleventyConfig.ignores.add("src/multimedia/**");
+  // Antecedentes en lista única: las portadas de las subsecciones
+  // (articulos/, casos/, noticias/) no se generan. Comentá esta línea
+  // para volver a tener páginas separadas por subsección.
+  eleventyConfig.ignores.add("src/antecedentes/*/index.md");
+
   eleventyConfig.addPassthroughCopy("src/css");
   eleventyConfig.addPassthroughCopy("src/img");
 
@@ -19,6 +31,14 @@ export default function (eleventyConfig) {
   });
 
   eleventyConfig.addFilter("zeroPad", (n) => String(n).padStart(2, "0"));
+
+  // Todas las entradas de Antecedentes (artículos, casos y noticias)
+  // en una sola lista, ordenadas por fecha
+  eleventyConfig.addCollection("antecedente", (api) =>
+    api
+      .getFilteredByGlob("src/antecedentes/*/*.md")
+      .filter((p) => !p.inputPath.endsWith("index.md"))
+  );
 
   // Divide el contenido renderizado en partes usando un marcador HTML,
   // p. ej. {% set partes = content | partir("<!-- principios -->") %}

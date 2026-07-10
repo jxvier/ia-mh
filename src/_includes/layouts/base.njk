@@ -34,7 +34,7 @@
       <nav class="mh-nav__links" aria-label="Principal">
         <ul>
           {%- for entry in collections.all | eleventyNavigation %}
-          {%- set activo = (entry.url == page.url) or (entry.url != "/" and page.url.startsWith(entry.url)) %}
+          {%- set activo = (entry.url == page.url) or (entry.url != "/" and page.url and page.url.startsWith(entry.url)) %}
           <li{% if activo %} class="activo"{% endif %}><a href="{{ entry.url }}">{{ entry.title }}</a></li>
           {%- endfor %}
         </ul>
@@ -61,14 +61,20 @@
         <div class="mh-footer__heading">Explorá</div>
         <a href="/manifiesto/">Manifiesto</a>
         <a href="/cuadernos/">Cuadernos</a>
+        {# DESACTIVADO PARA EL LANZAMIENTO — quitá el comentario para restaurar:
         <a href="/biblioteca/">Biblioteca</a>
+        #}
         <a href="/antecedentes/">Antecedentes</a>
       </div>
       <div class="mh-footer__col">
         <div class="mh-footer__heading">Más</div>
+        {# DESACTIVADO PARA EL LANZAMIENTO — quitá el comentario para restaurar:
         <a href="/multimedia/">Multimedia</a>
+        #}
         <a href="/equipo/">Equipo</a>
+        {# DESACTIVADO PARA EL LANZAMIENTO (las noticias ahora viven en /antecedentes/):
         <a href="/antecedentes/noticias/">Noticias</a>
+        #}
       </div>
       <div class="mh-footer__col">
         <div class="mh-footer__heading">Contacto</div>
