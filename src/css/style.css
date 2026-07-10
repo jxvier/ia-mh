@@ -867,6 +867,15 @@ h1, h2, h3 {
   text-decoration: none;
 }
 
+.listado-item__tipo {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.8125rem;
+  color: var(--mh-green);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
 .listado-item time {
   color: var(--color-suave);
   font-size: 0.85rem;
