@@ -9,7 +9,8 @@ const tarjetas = [
   { label: "Antecedentes", desc: "Artículos, casos y noticias.", color: "#5A2AE6", href: "/antecedentes/" },
   // DESACTIVADA PARA EL LANZAMIENTO:
   // { label: "Multimedia", desc: "Videos y material audiovisual.", color: "#FFC629", href: "/multimedia/" },
-  { label: "Equipo", desc: "Quiénes somos.", color: "#16A75C", href: "/equipo/" },
+  // DESACTIVADA PARA EL LANZAMIENTO:
+  // { label: "Equipo", desc: "Quiénes somos.", color: "#16A75C", href: "/equipo/" },
 ];
 
 export default tarjetas.map((t, i) => ({ ...t, cat: String(i + 1).padStart(2, "0") }));

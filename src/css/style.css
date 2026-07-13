@@ -830,6 +830,24 @@ h1, h2, h3 {
   .cuadernos-listado__n { width: 68px; height: 68px; font-size: 1.5rem; }
 }
 
+/* Resaltado de frases en Markdown:
+   ==frase== (amarillo) · ==frase=={.verde} · ==frase=={.morado} */
+mark {
+  --marca: rgba(255, 198, 41, 0.55);
+  background: linear-gradient(transparent 8%, var(--marca) 8%, var(--marca) 92%, transparent 92%);
+  color: inherit;
+  padding: 0 0.15em;
+  border-radius: 2px;
+}
+
+mark.verde {
+  --marca: rgba(22, 167, 92, 0.32);
+}
+
+mark.morado {
+  --marca: rgba(90, 42, 230, 0.22);
+}
+
 /* ======================= Contenido genérico ======================= */
 .pagina {
   max-width: var(--ancho-max);
