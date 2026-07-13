@@ -68,34 +68,25 @@ h1, h2, h3 {
   padding: 14px 0;
 }
 
-.mh-logo__mark {
-  width: 44px;
-  height: 44px;
+.mh-logo__img {
+  height: 52px;
+  width: auto;
   display: block;
-  flex-shrink: 0;
-}
-
-.mh-logo__text {
-  display: flex;
-  flex-direction: column;
-  line-height: 1;
-}
-
-.mh-logo__title {
-  font-family: var(--font-display);
-  font-weight: 700;
-  letter-spacing: 2px;
-  color: #fff;
-  font-size: 1.125rem;
 }
 
 .mh-logo__sub {
   font-family: var(--font-display);
-  font-size: 0.625rem;
+  font-size: 0.6875rem;
   letter-spacing: 3px;
   color: var(--mh-green);
   font-weight: 600;
-  margin-top: 4px;
+  border-left: 1px solid #3a3a3a;
+  padding-left: 15px;
+  white-space: nowrap;
+}
+
+@media (max-width: 480px) {
+  .mh-logo__img { height: 40px; }
 }
 
 .mh-nav__links {
