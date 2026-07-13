@@ -10,6 +10,8 @@
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.1.2",
-    "@11ty/eleventy-navigation": "^1.0.4"
+    "@11ty/eleventy-navigation": "^1.0.4",
+    "markdown-it-attrs": "^5.0.0",
+    "markdown-it-mark": "^4.0.0"
   }
 }

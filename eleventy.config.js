@@ -1,7 +1,17 @@
 import eleventyNavigationPlugin from "@11ty/eleventy-navigation";
+import markdownItMark from "markdown-it-mark";
+import markdownItAttrs from "markdown-it-attrs";
 
 export default function (eleventyConfig) {
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
+
+  // Resaltado en cualquier .md:
+  //   ==frase==            -> amarillo (por defecto)
+  //   ==frase=={.verde}    -> verde
+  //   ==frase=={.morado}   -> morado
+  eleventyConfig.amendLibrary("md", (mdLib) =>
+    mdLib.use(markdownItMark).use(markdownItAttrs)
+  );
 
   // ===================================================================
   // SECCIONES DESACTIVADAS PARA EL LANZAMIENTO
@@ -10,6 +20,7 @@ export default function (eleventyConfig) {
   // ===================================================================
   eleventyConfig.ignores.add("src/biblioteca/**");
   eleventyConfig.ignores.add("src/multimedia/**");
+  eleventyConfig.ignores.add("src/equipo/**");
   // Antecedentes en lista única: las portadas de las subsecciones
   // (articulos/, casos/, noticias/) no se generan. Comentá esta línea
   // para volver a tener páginas separadas por subsección.
