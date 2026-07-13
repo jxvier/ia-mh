@@ -1,5 +1,5 @@
 ---
-title: "La ruta hacia los Cuadernos GuÍA "
+title: "La ruta hacia los Cuadernos Guía"
 description: Cómo llegamos hasta aca. 
 date: 2026-07-07
 ---
@@ -24,6 +24,6 @@ Luego de meses de seminarios web y reuniones de equipo, en abril formulamos y pr
 
 Para esta nueva etapa se sumaron al equipo Lucía León, docente, y Ángel Figueroa, estudiante de segundo año. El propósito es contar con representación de todos los involucrados en la tarea de incorporar la IA. 
 
-Y aquí estamos ahora, presentando los primeros insumos prácticos a nuestra comunidad educativa. Se trata de diez Cuadernos GuÍA que tienen como objetivo ampliar la discusión acerca del uso de la inteligencia artificial en nuestra práctica docente. Nada de lo que presentamos aquí está escrito en piedra, nada es un producto final, nada es una regla o directriz institucional. Se trata de un primer grupo de herramientas para transitar juntos este camino. Con el paso del tiempo estas herramientas podrán evolucionar o cambiarse por otras mejores.  
+Y aquí estamos ahora, presentando los primeros insumos prácticos a nuestra comunidad educativa. Se trata de diez Cuadernos Guía que tienen como objetivo ampliar la discusión acerca del uso de la inteligencia artificial en nuestra práctica docente. Nada de lo que presentamos aquí está escrito en piedra, nada es un producto final, nada es una regla o directriz institucional. Se trata de un primer grupo de herramientas para transitar juntos este camino. Con el paso del tiempo estas herramientas podrán evolucionar o cambiarse por otras mejores.  
 
 De igual manera, el equipo gestor de esta iniciativa tampoco es permanente. A medida vayamos avanzando con nuestra adopción de la IA nuevos miembros se incorporarán y otros quizás saldrán. En definitiva, queremos que esta sea una iniciativa viva y que evolucione al ritmo de nuestra comunidad educativa. 
