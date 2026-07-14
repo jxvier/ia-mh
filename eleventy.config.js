@@ -51,6 +51,20 @@ export default function (eleventyConfig) {
       .filter((p) => !p.inputPath.endsWith("index.md"))
   );
 
+  // Un párrafo resaltado por completo (==párrafo=={.color}) se muestra
+  // como caja rectangular; los resaltados dentro de una frase quedan
+  // como marcador de línea.
+  eleventyConfig.addTransform("resaltadoBloque", function (content) {
+    if (!this.page.outputPath || !this.page.outputPath.endsWith(".html")) {
+      return content;
+    }
+    return content.replace(
+      /<p>\s*<mark(?:\s+class="([^"]*)")?>([\s\S]*?)<\/mark>\s*<\/p>/g,
+      (_m, clase, inner) =>
+        `<p class="mh-destacado${clase ? " " + clase : ""}">${inner}</p>`
+    );
+  });
+
   // Divide el contenido renderizado en partes usando un marcador HTML,
   // p. ej. {% set partes = content | partir("<!-- principios -->") %}
   eleventyConfig.addFilter("partir", (str, sep) => String(str).split(sep));

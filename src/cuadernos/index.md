@@ -1,11 +1,12 @@
 ---
-title: Cuadernos
+title: Cuadernos GuÍA
 layout: layouts/cuadernos.njk
 coleccion: cuaderno
 orden: asc
 "override:tags": []
 eleventyNavigation:
   key: Cuadernos
+  title: Cuadernos GuÍA
   order: 3
 ---
 
