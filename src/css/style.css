@@ -255,10 +255,6 @@ h1, h2, h3 {
   position: relative;
   max-width: var(--mh-ancho-max);
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
-  gap: 48px;
-  align-items: center;
 }
 
 .inicio-hero__title {
@@ -283,47 +279,6 @@ h1, h2, h3 {
   gap: 14px;
   margin-top: 32px;
   flex-wrap: wrap;
-}
-
-.inicio-hero__photo {
-  position: relative;
-}
-
-.inicio-hero__photo .blob--orange {
-  width: 96px; height: 86px;
-  border-radius: 62% 38% 55% 45% / 55% 45% 60% 40%;
-  top: -28px; right: -26px;
-}
-
-.inicio-hero__photo .blob--yellow {
-  width: 60px; height: 60px;
-  border-radius: 50%;
-  bottom: -20px; right: 60px;
-}
-
-.inicio-hero__photo .blob--green {
-  width: 104px; height: 92px;
-  border-radius: 45% 55% 60% 40% / 50% 40% 60% 50%;
-  bottom: -28px; left: -26px;
-}
-
-.inicio-hero__photo-frame {
-  position: relative;
-  aspect-ratio: 4 / 5;
-  border-radius: 18px;
-  overflow: hidden;
-  z-index: 1;
-  background: repeating-linear-gradient(45deg, #2a2a2a 0 16px, #333 16px 32px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.inicio-hero__photo-frame span {
-  font-family: monospace;
-  font-size: 0.8125rem;
-  color: #888;
-  letter-spacing: 1px;
 }
 
 .inicio-explora {
@@ -400,8 +355,6 @@ h1, h2, h3 {
 }
 
 @media (max-width: 900px) {
-  .inicio-hero__grid { grid-template-columns: 1fr; }
-  .inicio-hero__photo { max-width: 320px; margin-top: 24px; }
   .explora-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
@@ -837,6 +790,26 @@ mark.verde {
 
 mark.morado {
   --marca: rgba(90, 42, 230, 0.22);
+}
+
+/* Párrafo resaltado por completo: caja rectangular en vez de marcador */
+.mh-destacado {
+  --caja-fondo: rgba(255, 198, 41, 0.2);
+  --caja-borde: var(--mh-yellow);
+  background: var(--caja-fondo);
+  border-left: 4px solid var(--caja-borde);
+  border-radius: 8px;
+  padding: 18px 22px;
+}
+
+.mh-destacado.verde {
+  --caja-fondo: rgba(22, 167, 92, 0.14);
+  --caja-borde: var(--mh-green);
+}
+
+.mh-destacado.morado {
+  --caja-fondo: rgba(90, 42, 230, 0.1);
+  --caja-borde: var(--mh-purple);
 }
 
 /* ======================= Contenido genérico ======================= */

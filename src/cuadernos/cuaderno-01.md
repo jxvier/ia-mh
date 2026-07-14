@@ -61,6 +61,7 @@ La transparencia de proceso consiste en hacer visible cómo se construyó un tra
 Una forma sencilla de promoverla es con una declaración de uso de IA cuando la herramienta haya tenido un rol significativo. 
 
 Término clave: Declaración de uso de IA 
+
 ==Una declaración de uso de IA es una explicación breve sobre cómo se utilizó una herramienta de inteligencia artificial en una actividad académica. Puede mencionar herramienta, propósito, partes del trabajo intervenidas y decisiones tomadas por el individuo.=={.verde} 
 
 Ejemplo: 
@@ -76,6 +77,7 @@ Esta declaración ayuda al docente a evaluar mejor, al estudiante a pensar sobre
 No todo uso de IA tiene el mismo impacto. Una herramienta puede apoyar una parte secundaria del trabajo o puede desplazar el proceso que la actividad buscaba desarrollar. 
 
 Término clave: Uso sustitutivo de IA 
+
 ==El uso sustitutivo ocurre cuando la IA reemplaza el proceso que el estudiante debía realizar para aprender o demostrar una competencia. El problema principal es que la herramienta haya ocupado el lugar del aprendizaje esperado.=={.verde} 
 
 La pregunta útil para el diseño docente es: 

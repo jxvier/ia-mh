@@ -2,8 +2,8 @@
 title: Manifiesto
 layout: layouts/manifiesto.njk
 lede: Lo estamos descifrando. Ese es el punto.
-# ID del video de YouTube (lo que va después de watch?v=), p. ej. video: dQw4w9WgXcQ
-video:
+# ID del video de YouTube (lo que va después de watch?v=)
+video: kn-GR2OR5k8
 eleventyNavigation:
   key: Manifiesto
   order: 2
