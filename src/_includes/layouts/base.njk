@@ -66,7 +66,7 @@
         <p class="mh-footer__contact">{{ site.telefono }}<br>ia.monicaherrera.edu.sv</p>
         <div class="mh-footer__social">
           {%- for r in site.redes %}
-          <a href="{{ r.href }}" aria-label="{{ r.icono | replace('fa-brands fa-', '') }}"><i class="{{ r.icono }}"></i></a>
+          <a href="{{ r.href }}" target="_blank" rel="noopener" aria-label="{{ r.icono | replace('fa-brands fa-', '') }}"><i class="{{ r.icono }}"></i></a>
           {%- endfor %}
         </div>
       </div>
