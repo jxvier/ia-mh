@@ -1,105 +1,129 @@
-# IA · Mónica Herrera — ia.monicaherrera.edu.sv
+# IA · Mónica Herrera
 
-Sitio estático construido con [Eleventy (11ty)](https://www.11ty.dev/). Todo el contenido vive en archivos Markdown: **agregar o editar un `.md` actualiza el sitio** en el siguiente build.
+Sitio de la **Sección de Inteligencia Artificial de la Escuela Mónica Herrera**, publicado en [ia.monicaherrera.edu.sv](https://ia.monicaherrera.edu.sv).
+
+Es un sitio estático construido con [Eleventy (11ty)](https://www.11ty.dev/). Todo el contenido vive en archivos Markdown dentro de `src/`: agregar o editar un `.md` actualiza el sitio en el siguiente build.
+
+## Requisitos
+
+- [Node.js](https://nodejs.org/) 18 o superior
+- npm (viene con Node)
 
 ## Comandos
 
 ```bash
-npm install        # solo la primera vez
-npm run dev        # servidor local con recarga en http://localhost:8080
-npm run build      # genera el sitio estático en _site/
+npm install     # solo la primera vez
+npm run dev     # servidor local con recarga automática (http://localhost:8080)
+npm run build   # genera el sitio estático en _site/
 ```
 
-## Estructura de contenido
+> **Nota:** el servidor de desarrollo no detecta archivos **nuevos**. Si creás un `.md` nuevo, reiniciá `npm run dev` para que aparezca.
 
-```
-src/
-├── index.md                      → Inicio
-├── manifiesto.md                 → Manifiesto
-├── cuadernos/                    → Cuadernos (un .md por cuaderno)
-├── biblioteca/
-│   ├── papers/                   → un .md por paper
-│   ├── herramientas/             → un .md por herramienta
-│   └── recursos/                 → un .md por recurso
-├── antecedentes/
-│   ├── articulos/                → un .md por artículo
-│   ├── casos/                    → un .md por caso
-│   └── noticias/                 → un .md por noticia
-├── multimedia/
-│   └── videos/                   → un .md por video (embed de YouTube)
-└── equipo/                       → un .md por persona
-```
+## Secciones del sitio
+
+| Sección | Archivo o carpeta | URL |
+|---|---|---|
+| Inicio | `src/index.md` | `/` |
+| Manifiesto | `src/manifiesto.md` | `/manifiesto/` |
+| Cuadernos GuÍA | `src/cuadernos/` | `/cuadernos/` |
+| Antecedentes | `src/antecedentes/` | `/antecedentes/` |
+
+Las carpetas `src/biblioteca/`, `src/multimedia/` y `src/equipo/` existen pero están **desactivadas para el lanzamiento**. Para reactivar una, borrá o comentá su línea `eleventyConfig.ignores.add(...)` en `eleventy.config.js`.
 
 ## Cómo agregar contenido
 
 ### Un cuaderno nuevo
 
-Crea `src/cuadernos/cuaderno-03.md`:
+Creá `src/cuadernos/cuaderno-03.md` (el número del archivo es el que se muestra en la tarjeta):
 
 ```markdown
 ---
-title: "Cuaderno 03 — Título del ciclo"
+title: "Cuaderno 03 — Título del cuaderno"
 description: Resumen corto que aparece en el listado.
-date: 2026-08-01
+date: 2026-11-15
+---
+
+## Idea central
+
+Contenido en Markdown…
+```
+
+Los cuadernos se listan en orden ascendente (01, 02, 03…).
+
+### Un artículo, caso o noticia en Antecedentes
+
+Creá un `.md` en `src/antecedentes/articulos/`, `src/antecedentes/casos/` o `src/antecedentes/noticias/`:
+
+```markdown
+---
+title: "Título de la entrada"
+description: Resumen corto que aparece en el listado.
+date: 2026-11-15
 ---
 
 Contenido en Markdown…
 ```
 
-Los artículos, casos y noticias funcionan igual, en su carpeta correspondiente. Se listan de más reciente a más antiguo (los cuadernos, en orden ascendente).
+Las tres carpetas se muestran juntas en una sola lista, de más reciente a más antigua.
 
-### Un paper, herramienta o recurso
+### Cajas de resaltado
 
-Crea un `.md` en la carpeta correspondiente de `src/biblioteca/`:
-
-```markdown
----
-title: "Nombre del recurso"
-autor: "Autor o institución"
-enlace: https://ejemplo.com
----
-
-Nota breve sobre por qué es relevante.
-```
-
-Estas entradas se muestran como lista comentada de enlaces (no generan página propia).
-
-### Un video
-
-Crea un `.md` en `src/multimedia/videos/` con el ID de YouTube (lo que va después de `v=` en la URL):
+En cualquier `.md` podés resaltar texto con `==`:
 
 ```markdown
----
-title: "Título del video"
-youtubeId: aircAruvnKk
-date: 2026-08-01
----
-
-Descripción breve.
+==frase resaltada==                 → amarillo (por defecto)
+==frase resaltada=={.verde}         → verde
+==frase resaltada=={.morado}        → morado
 ```
 
-También puedes incrustar un video dentro de cualquier página con el shortcode:
-`{% youtube "VIDEO_ID", "Título" %}`
+Si el resaltado ocupa un párrafo completo, se muestra como **caja de color**. Si está dentro de una frase, queda como marcador de línea. En los cuadernos se usa verde para las definiciones de términos clave y morado para la consideración ética y pedagógica.
 
-### Una persona del equipo
+### Un video de YouTube
 
-Crea un `.md` en `src/equipo/`:
+Dentro de cualquier `.md`, con el ID del video (lo que va después de `v=` en la URL):
 
-```markdown
----
-title: "Nombre Apellido"
-rol: "Su rol"
-orden: 3
-foto: /img/nombre.jpg   # opcional; coloca la imagen en src/img/
----
-
-Bio breve.
+```njk
+{% youtube "VIDEO_ID", "Título del video" %}
 ```
 
-## Despliegue en ia.monicaherrera.edu.sv
+El video del Manifiesto se define en el campo `video` del front matter de `src/manifiesto.md`.
 
-El build genera HTML estático en `_site/`, así que sirve cualquier hosting estático:
+## Datos globales
 
-1. **Netlify / Vercel / Cloudflare Pages** (recomendado): conecta el repositorio Git; comando de build `npm run build`, directorio de salida `_site`. Cada push a `main` publica automáticamente.
-2. **GitHub Pages**: usa una GitHub Action que ejecute `npm run build` y publique `_site/`.
-3. **DNS**: en la zona de `monicaherrera.edu.sv`, crea un registro `CNAME` para `ia` apuntando al host que asigne la plataforma (p. ej. `ia.monicaherrera.edu.sv → <sitio>.netlify.app`) y agrega el dominio personalizado en el panel de la plataforma para que emita el certificado HTTPS.
+`src/_data/site.json` contiene el nombre del sitio, la descripción que aparece en el pie de página, el teléfono y los enlaces a redes sociales. Cambiar un valor ahí lo actualiza en todas las páginas.
+
+El logo es `src/img/logo-monica-herrera.png` y se usa en el encabezado y el pie de página.
+
+## Publicar en ia.monicaherrera.edu.sv
+
+El sitio ya está instalado en el servidor. Cada vez que se hace push a `main`, GitHub construye el sitio automáticamente y deja el resultado listo para descargar. **No hace falta instalar Node ni ejecutar nada.**
+
+1. Descargá el último build desde este enlace:
+   **https://github.com/jxvier/ia-mh/releases/latest/download/ia-monicaherrera-sitio.zip**
+   (también está en la página [Releases](https://github.com/jxvier/ia-mh/releases) del repositorio).
+2. Descomprimí el `.zip`.
+3. Subí su contenido por FTP a la raíz del sitio web, reemplazando los archivos existentes.
+
+El build tarda alrededor de un minuto después de cada push. El proceso está definido en `.github/workflows/publicar.yml`.
+
+Para construir localmente, `npm run build` genera lo mismo en `_site/`.
+
+Los enlaces internos son rutas absolutas (`/cuadernos/`, `/css/style.css`), así que el sitio debe servirse desde la raíz del dominio.
+
+Como el encabezado y el pie de página son compartidos, cualquier cambio en `src/_includes/layouts/base.njk`, `src/css/style.css` o `src/_data/site.json` regenera **todas** las páginas HTML. En ese caso hay que subir todo `_site/`, no solo la página editada.
+
+## Estructura del proyecto
+
+```
+src/
+├── _data/site.json          Datos globales (nombre, descripción, redes)
+├── _includes/layouts/       Plantillas Nunjucks (base, inicio, cuadernos, etc.)
+├── css/style.css            Estilos
+├── img/                     Logo e imágenes
+├── index.md                 Inicio
+├── manifiesto.md            Manifiesto
+├── cuadernos/               Un .md por cuaderno
+└── antecedentes/            Artículos, casos y noticias
+eleventy.config.js           Configuración de Eleventy (filtros, colecciones, secciones activas)
+_site/                       Salida del build (no se versiona)
+```

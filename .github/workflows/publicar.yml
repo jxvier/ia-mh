@@ -1,0 +1,46 @@
+# Cada push a main construye el sitio y publica el resultado como un
+# .zip en la página de Releases del repositorio. El enlace estable al
+# último build es:
+#   https://github.com/jxvier/ia-mh/releases/latest/download/ia-monicaherrera-sitio.zip
+name: Publicar sitio
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publicar
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+      - run: npm run build
+
+      - name: Empaquetar _site
+        run: |
+          cd _site
+          zip -r ../ia-monicaherrera-sitio.zip .
+          cd ..
+          echo "TAG=sitio-$(date -u +%Y%m%d-%H%M)" >> "$GITHUB_ENV"
+
+      - name: Publicar release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "$TAG" ia-monicaherrera-sitio.zip \
+            --title "Sitio $TAG" \
+            --notes "Build automático de \`${GITHUB_SHA::7}\`. Descomprimir el .zip y subir su contenido a la raíz de ia.monicaherrera.edu.sv."
