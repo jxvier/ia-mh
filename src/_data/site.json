@@ -5,17 +5,17 @@
   "telefono": "+503 2507 6500",
   "whatsapp": "https://wa.me/50325076500",
   "utilidad": [
-    { "label": "Microsoft 365", "href": "#" },
-    { "label": "Mi Escuela", "href": "#" },
-    { "label": "Gestiones", "href": "#" },
-    { "label": "Moodle", "href": "#" },
-    { "label": "Biblioteca", "href": "#" }
+    { "label": "Microsoft 365", "href": "https://outlook.com/monicaherrera.edu.sv" },
+    { "label": "Mi Escuela", "href": "https://miescuela.monicaherrera.edu.sv/" },
+    { "label": "Gestiones", "href": "https://osticket.monicaherrera.edu.sv/" },
+    { "label": "Moodle", "href": "https://campus.monicaherrera.edu.sv/" },
+    { "label": "Biblioteca", "href": "https://monicaherrera.edu.sv/biblioteca/" }
   ],
   "redes": [
-    { "icono": "fa-brands fa-facebook", "href": "#" },
-    { "icono": "fa-brands fa-instagram", "href": "#" },
-    { "icono": "fa-brands fa-linkedin", "href": "#" },
-    { "icono": "fa-brands fa-youtube", "href": "#" },
-    { "icono": "fa-brands fa-x-twitter", "href": "#" }
+    { "icono": "fa-brands fa-facebook", "href": "https://www.facebook.com/monicaherrera.sv" },
+    { "icono": "fa-brands fa-instagram", "href": "https://www.instagram.com/monicaherrera.sv/" },
+    { "icono": "fa-brands fa-linkedin", "href": "https://www.linkedin.com/school/ecmhsv/" },
+    { "icono": "fa-brands fa-youtube", "href": "https://www.youtube.com/user/ECMHsv" },
+    { "icono": "fa-brands fa-x-twitter", "href": "https://x.com/_emhsv" }
   ]
 }
