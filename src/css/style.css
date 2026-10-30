@@ -995,24 +995,14 @@ mark.morado {
 }
 
 .mh-footer__logo {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.mh-footer__diamond {
-  width: 26px;
-  height: 26px;
-  background: var(--mh-green);
-  transform: rotate(45deg);
   display: inline-block;
+  text-decoration: none;
 }
 
-.mh-footer__logo span:last-child {
-  font-family: var(--font-display);
-  font-weight: 700;
-  letter-spacing: 2px;
-  font-size: 1rem;
+.mh-footer__logo-img {
+  height: 48px;
+  width: auto;
+  display: block;
 }
 
 .mh-footer__brand p {
