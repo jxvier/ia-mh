@@ -1,6 +1,6 @@
 ---
 title: Inicio
-description: Este espacio reúne el trabajo de exploración, investigación y experimentación con IA en la Escuela de Comunicación Mónica Herrera.
+description: Este espacio reúne el trabajo de exploración, investigación y experimentación con IA en la Escuela Mónica Herrera.
 layout: layouts/inicio.njk
 eleventyNavigation:
   key: Inicio
