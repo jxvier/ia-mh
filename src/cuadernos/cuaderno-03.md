@@ -1,7 +1,7 @@
 ---
 title: "Cuaderno 03 — IA en el desarrollo de la resolución de problemas"
 description: Diseñar caminos, integrar capacidades y poner soluciones a prueba
-date: 2026-11-13
+date: 2026-11-15
 ---
 
 ## Idea central
